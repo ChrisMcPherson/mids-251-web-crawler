@@ -1,9 +1,12 @@
 from pymongo import MongoClient
+#root:C3Y7lDPL@
+client = MongoClient('mongodb://169.45.131.5/cdsearchdb')
+#client = MongoClient()
+db = client.cdsearchdb
 
-client = MongoClient()
-db = client.test
-
-cursor = db.restaurants.find({"_id": "randomURLhash1"})
+#{"raw_url": "randomURLhash1"}
+cursor = db.webpages.find()
 
 for document in cursor:
     print(document)
+    break
