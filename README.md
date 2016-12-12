@@ -1,7 +1,7 @@
 # mids-251-web-crawler
 A repository for all code written for the MIDS-251 Final project by Chuck, Rama, Chris, and Andrew.
 
-This web crawler is a closed domain crawler for information on medical doctors and procedures. It provides simple query capabilities for users intersted in learning more about a specific doctor or procedure. The application can be categorized into four steps:
+This web crawler is a closed domain crawler for information on medical doctors and procedures. It provides simple query capabilities for users intersted in finding web sites related to medical search terms. The application can be categorized into four steps:
 
  - Provided a set of seed URLs, the web crawler will identify all URLs referenced in each seed and stores them. The crawler is also configurable to recursively process each new URL and will do so for as many levels of recursion that is specified.
  - Download HTML from each valid URL provided by previous step and store content in a MongoDB NoSQL Document Store.
