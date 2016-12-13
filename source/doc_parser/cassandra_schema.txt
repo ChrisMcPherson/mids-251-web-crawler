@@ -1,0 +1,15 @@
+create keyspace crawler with replication = {'class':'SimpleStrategy', 'replication_factor':1};
+
+create table crawler.SEARCH_META_DATA (search_id bigint PRIMARY KEY, search_term text, matches_found bigint, date_created timestamp);
+
+CREATE INDEX ON crawler.SEARCH_META_DATA (search_term);
+CREATE INDEX ON crawler.SEARCH_META_DATA (matches_found);
+CREATE INDEX ON crawler.SEARCH_META_DATA (date_created);
+
+create table crawler.SEARCH_REFERENCES (search_reference_id bigint PRIMARY KEY, search_id bigint, source_ref_id text, url text, html text, date_created timestamp);
+
+CREATE INDEX ON crawler.SEARCH_REFERENCES (search_id);
+CREATE INDEX ON crawler.SEARCH_REFERENCES (source_ref_id);
+CREATE INDEX ON crawler.SEARCH_REFERENCES (url);
+CREATE INDEX ON crawler.SEARCH_REFERENCES (html);
+CREATE INDEX ON crawler.SEARCH_REFERENCES (date_created);
