@@ -1,0 +1,11 @@
+drop table crawler.search_meta_data;
+CREATE TABLE crawler.search_meta_data (search_id text, date_created timestamp, matches_found text, search_term text, PRIMARY KEY (search_id));
+create index on crawler.search_meta_data(search_term);
+
+drop table crawler.search_references;
+CREATE TABLE crawler.search_references (search_reference_id text, date_created timestamp,  html text, search_id text, source_ref_id text, url text, PRIMARY KEY  (search_reference_id));
+
+create index on crawler.search_references (search_id);
+
+CREATE TABLE crawler.search_thread_status (search_id text, process_id text, time_taken text, match_count text, primary key(search_id,process_id));
+ 
